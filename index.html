@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LAFNA — Bonnets Made in Côte d'Ivoire</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="logo">LAFNA</a>
+      <ul class="nav-links">
+        <li><a href="#home">Accueil</a></li>
+        <li><a href="#about">La Marque</a></li>
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#shop">Boutique</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="cart-btn" onclick="toggleCart()">
+        🛍️ <span id="cart-count">0</span>
+      </button>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" onclick="toggleMenu()">✕</button>
+    <ul>
+      <li><a href="#home" onclick="toggleMenu()">Accueil</a></li>
+      <li><a href="#about" onclick="toggleMenu()">La Marque</a></li>
+      <li><a href="#collection" onclick="toggleMenu()">Collection</a></li>
+      <li><a href="#shop" onclick="toggleMenu()">Boutique</a></li>
+      <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Mon Panier</h3>
+      <button onclick="toggleCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty">Votre panier est vide.</p>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        <span>Total :</span>
+        <span id="cartTotal">0 FCFA</span>
+      </div>
+      <button class="btn-order" onclick="passOrder()">Passer la commande</button>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Made in Côte d'Ivoire 🇨🇮</p>
+      <h1 class="hero-title">LAFNA</h1>
+      <p class="hero-sub">Porter l'originalité.<br/>Afficher son identité.</p>
+      <div class="hero-btns">
+        <a href="#shop" class="btn-primary">Découvrir la collection</a>
+        <a href="#about" class="btn-secondary">Notre histoire</a>
+      </div>
+    </div>
+    <div class="hero-scroll">↓</div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="section-eyebrow">Notre Histoire</p>
+          <h2>Deux amis,<br/>une vision.</h2>
+          <p>LAFNA est née d'une passion commune pour la mode, la créativité et l'envie de proposer quelque chose d'unique sur le marché ivoirien. Notre nom, acronyme mêlant nos deux identités, symbolise cette union.</p>
+          <p>Chaque bonnet LAFNA est confectionné avec soin, pensé pour la jeunesse africaine qui ose s'affirmer et porter fièrement son identité.</p>
+          <div class="about-values">
+            <div class="value-item">
+              <span class="value-icon">✦</span>
+              <div>
+                <h4>Authenticité</h4>
+                <p>Des créations 100% originales</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <span class="value-icon">✦</span>
+              <div>
+                <h4>Qualité artisanale</h4>
+                <p>Chaque pièce, faite avec soin</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <span class="value-icon">✦</span>
+              <div>
+                <h4>Culture locale</h4>
+                <p>Inspiré par la Côte d'Ivoire</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="about-card">
+            <div class="about-card-inner">
+              <span class="big-letter">L</span>
+              <p>Lafna — c'est nous.<br/>C'est vous.<br/>C'est notre génération.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTION HIGHLIGHT -->
+  <section id="collection" class="collection">
+    <div class="container">
+      <p class="section-eyebrow center">Nos Gammes</p>
+      <h2 class="center">La Collection LAFNA</h2>
+      <div class="collection-grid">
+        <div class="collection-card">
+          <div class="col-img col-img-1">
+            <span class="col-badge">Best-seller</span>
+          </div>
+          <div class="col-info">
+            <h3>LAFNA Classic</h3>
+            <p>Le bonnet essentiel. Design épuré, couleurs tendance, logo discret.</p>
+            <span class="col-price">5 000 FCFA</span>
+          </div>
+        </div>
+        <div class="collection-card">
+          <div class="col-img col-img-2">
+            <span class="col-badge">Tendance</span>
+          </div>
+          <div class="col-info">
+            <h3>LAFNA Street</h3>
+            <p>Style streetwear affirmé. Broderies et patches exclusifs.</p>
+            <span class="col-price">8 000 FCFA</span>
+          </div>
+        </div>
+        <div class="collection-card">
+          <div class="col-img col-img-3">
+            <span class="col-badge">Premium</span>
+          </div>
+          <div class="col-info">
+            <h3>LAFNA Custom</h3>
+            <p>Ton bonnet, tes règles. 100% personnalisé selon tes désirs.</p>
+            <span class="col-price">À partir de 10 000 FCFA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOP -->
+  <section id="shop" class="shop">
+    <div class="container">
+      <p class="section-eyebrow center">Boutique</p>
+      <h2 class="center">Commander un bonnet</h2>
+      <p class="shop-subtitle center">Choisissez votre modèle, ajoutez au panier et passez commande via WhatsApp.</p>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterProducts('all', this)">Tous</button>
+        <button class="filter-btn" onclick="filterProducts('classic', this)">Classic</button>
+        <button class="filter-btn" onclick="filterProducts('street', this)">Street</button>
+        <button class="filter-btn" onclick="filterProducts('premium', this)">Premium</button>
+        <button class="filter-btn" onclick="filterProducts('custom', this)">Custom</button>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+
+        <div class="product-card" data-category="classic">
+          <div class="prod-img prod-img-1">
+            <span class="prod-tag">Classic</span>
+          </div>
+          <div class="prod-info">
+            <h4>LAFNA Classic — Noir</h4>
+            <p>Bonnet classic noir avec logo LAFNA brodé</p>
+            <div class="prod-footer">
+              <span class="prod-price">5 000 FCFA</span>
+              <button class="btn-cart" onclick="addToCart('LAFNA Classic Noir', 5000)">+ Panier</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="classic">
+          <div class="prod-img prod-img-2">
+            <span class="prod-tag">Classic</span>
+          </div>
+          <div class="prod-info">
+            <h4>LAFNA Classic — Blanc</h4>
+            <p>Bonnet classic blanc, finition premium</p>
+            <div class="prod-footer">
+              <span class="prod-price">5 000 FCFA</span>
+              <button class="btn-cart" onclick="addToCart('LAFNA Classic Blanc', 5000)">+ Panier</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="street">
+          <div class="prod-img prod-img-3">
+            <span class="prod-tag">Street</span>
+          </div>
+          <div class="prod-info">
+            <h4>LAFNA Street — Orange</h4>
+            <p>Style streetwear avec broderies exclusives</p>
+            <div class="prod-footer">
+              <span class="prod-price">8 000 FCFA</span>
+              <button class="btn-cart" onclick="addToCart('LAFNA Street Orange', 8000)">+ Panier</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="street">
+          <div class="prod-img prod-img-4">
+            <span class="prod-tag">Street</span>
+          </div>
+          <div class="prod-info">
+            <h4>LAFNA Street — Kaki</h4>
+            <p>Edition limitée, coloris kaki tendance</p>
+            <div class="prod-footer">
+              <span class="prod-price">8 000 FCFA</span>
+              <button class="btn-cart" onclick="addToCart('LAFNA Street Kaki', 8000)">+ Panier</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="premium">
+          <div class="prod-img prod-img-5">
+            <span class="prod-tag">Premium</span>
+          </div>
+          <div class="prod-info">
+            <h4>LAFNA Premium</h4>
+            <p>Laine premium, design exclusif, pièce unique</p>
+            <div class="prod-footer">
+              <span class="prod-price">12 000 FCFA</span>
+              <button class="btn-cart" onclick="addToCart('LAFNA Premium', 12000)">+ Panier</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="product-card" data-category="custom">
+          <div class="prod-img prod-img-6">
+            <span class="prod-tag">Custom</span>
+          </div>
+          <div class="prod-info">
+            <h4>LAFNA Custom</h4>
+            <p>Ton design, tes couleurs, ton bonnet unique</p>
+            <div class="prod-footer">
+              <span class="prod-price">À partir de 10 000 FCFA</span>
+              <button class="btn-cart" onclick="addToCart('LAFNA Custom', 10000)">+ Panier</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TEMOIGNAGES -->
+  <section class="testimonials">
+    <div class="container">
+      <p class="section-eyebrow center">Ils portent LAFNA</p>
+      <h2 class="center">Ce que disent nos clients</h2>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <p>"Un bonnet de qualité incroyable ! Le design est original et j'ai reçu des compliments partout où je suis passé."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">K</div>
+            <div>
+              <strong>Kofi A.</strong>
+              <span>Abidjan, Cocody</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <p>"J'ai commandé un LAFNA Custom pour mon anniversaire et le résultat était exactement comme je le voulais. Livraison rapide !"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">A</div>
+            <div>
+              <strong>Aminata D.</strong>
+              <span>Abidjan, Yopougon</span>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <p>"Enfin une marque ivoirienne qui propose des bonnets tendance et abordables. Je suis fan, j'en ai déjà 3 !"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">S</div>
+            <div>
+              <strong>Serge M.</strong>
+              <span>Abidjan, Plateau</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <p class="section-eyebrow center">Nous contacter</p>
+      <h2 class="center">Parlons-nous</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>LAFNA — Bonnets Made in CI</h3>
+          <p>Pour toute commande, question ou collaboration, contactez-nous directement.</p>
+          <div class="contact-items">
+            <div class="contact-item">
+              <span>📱</span>
+              <div>
+                <strong>WhatsApp</strong>
+                <p>+225 XX XX XX XX XX</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span>📸</span>
+              <div>
+                <strong>Instagram</strong>
+                <p>@lafna.bonnets</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span>📧</span>
+              <div>
+                <strong>Email</strong>
+                <p>lafna.bonnets@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span>📍</span>
+              <div>
+                <strong>Livraison</strong>
+                <p>Abidjan et environs</p>
+              </div>
+            </div>
+          </div>
+          <a href="https://wa.me/22500000000?text=Bonjour LAFNA, je voudrais commander un bonnet !" class="btn-whatsapp" target="_blank">
+            💬 Commander sur WhatsApp
+          </a>
+        </div>
+        <div class="contact-form">
+          <form onsubmit="submitForm(event)">
+            <div class="form-group">
+              <label>Votre nom</label>
+              <input type="text" id="fname" placeholder="Ex: Kofi Atta" required/>
+            </div>
+            <div class="form-group">
+              <label>Votre téléphone / WhatsApp</label>
+              <input type="tel" id="fphone" placeholder="+225 XX XX XX XX XX" required/>
+            </div>
+            <div class="form-group">
+              <label>Modèle souhaité</label>
+              <select id="fmodel">
+                <option value="">-- Choisir un modèle --</option>
+                <option>LAFNA Classic (5 000 FCFA)</option>
+                <option>LAFNA Street (8 000 FCFA)</option>
+                <option>LAFNA Premium (12 000 FCFA)</option>
+                <option>LAFNA Custom (à partir de 10 000 FCFA)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message / Précisions</label>
+              <textarea id="fmessage" rows="4" placeholder="Couleur souhaitée, personnalisation, questions..."></textarea>
+            </div>
+            <button type="submit" class="btn-primary full-width">Envoyer ma demande</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3 class="logo">LAFNA</h3>
+          <p>Porter l'originalité,<br/>afficher son identité.</p>
+          <div class="socials">
+            <a href="#">IG</a>
+            <a href="#">TK</a>
+            <a href="#">WA</a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#about">La Marque</a></li>
+            <li><a href="#collection">Collection</a></li>
+            <li><a href="#shop">Boutique</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Produits</h4>
+          <ul>
+            <li><a href="#shop">LAFNA Classic</a></li>
+            <li><a href="#shop">LAFNA Street</a></li>
+            <li><a href="#shop">LAFNA Premium</a></li>
+            <li><a href="#shop">LAFNA Custom</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Infos</h4>
+          <ul>
+            <li><a href="#">Livraison Abidjan</a></li>
+            <li><a href="#">Comment commander</a></li>
+            <li><a href="#">Paiement Mobile Money</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 LAFNA — Made in Côte d'Ivoire 🇨🇮 Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- NOTIFICATION -->
+  <div class="notification" id="notification"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
